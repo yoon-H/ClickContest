@@ -1,7 +1,7 @@
 import { createServer } from "http";
-import { initDB, logInUser, registerUser } from "./auth.js";
+import { logInUser, registerUser } from "./auth.js";
 
-console.log('실행!');
+console.log("실행!");
 
 const server = createServer((req, res) => {
   console.log("server Start!!!");
