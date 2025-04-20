@@ -34,4 +34,5 @@ export const disqualifyUser = (user) => {
   users.delete(user.token);
   blackList.add(user.token);
   db.run("UPDATE users SET disqualified = TRUE WHERE id = ?", [user.id]);
+  user.socket.destroy(); // 연결 강제 종료.
 };

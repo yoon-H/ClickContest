@@ -47,6 +47,7 @@ class Game {
       }
 
       clearInterval(user.clickLoop);
+      socket.end("서버가 연결을 종료합니다.");
     }
 
     game = null;
