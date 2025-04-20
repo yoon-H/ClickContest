@@ -1,3 +1,4 @@
+import { clickHandler } from "../handlers/click.handler.js";
 import { errorHandler } from "../handlers/error.handler.js";
 import { addUser, blackList } from "../users/user.session.js";
 
@@ -22,10 +23,9 @@ export const onData = (socket) => async (data) => {
 
       if (!users.has(tokenHex)) {
         addUser(socket, tokenHex);
+      } else {
+        clickHandler(socket, tokenHex);
       }
-
-      
-
     } catch (err) {
       errorHandler(socket, err.message);
     }
