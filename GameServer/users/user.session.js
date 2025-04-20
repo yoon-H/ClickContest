@@ -2,8 +2,7 @@ import { DatabaseSync } from "node:sqlite";
 import { errorHandler } from "../handlers/error.handler.js";
 import User from "./user.class.js";
 
-export const users = new Map();
-export const blackList = new Set(); // 토큰 저장
+const users = [];
 
 const db = new DatabaseSync("../users.db");
 
@@ -18,13 +17,12 @@ export const addUser = (socket, token) => {
         }
 
         if (row.disqualified) {
-          blackList.add(token);
           new Error("실격된 사용자입니다.");
         }
 
         const user = new User(socket, row.id, row.address, token);
 
-        users.set(token, user);
+        users.push(user);
       }
     );
   } catch (err) {
