@@ -4,8 +4,8 @@ const CONSTANTS = {
   LIMITED_NUM: 5,
   LIMITED_TIME: 1_000_000_000n,
   RESPONSE_CODE: {
-    EVENT_END,
-    ERROR,
+    EVENT_END: 1,
+    ERROR: 2,
   },
 };
 
