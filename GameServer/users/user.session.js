@@ -29,3 +29,13 @@ export const addUser = (socket, token) => {
     errorHandler(socket, err.message);
   }
 };
+
+export const disqualifyUser = (socket, id) => {
+  try {
+    users.delete(this.token);
+    blackList.add(this.token);
+    db.run("UPDATE users SET disqualified = TRUE WHERE id = ?", [id]);
+  } catch (err) {
+    errorHandler(socket, err.message);
+  }
+};
