@@ -37,6 +37,8 @@ class Game {
       if (token === winner.token) {
         sendPacket(user.socket, CONSTANTS.RESPONSE_CODE.EVENT_END, {
           result: "win",
+          address: user.address,
+          count: user.clicks.length,
         });
       } else {
         sendPacket(user.socket, CONSTANTS.RESPONSE_CODE.EVENT_END, {
