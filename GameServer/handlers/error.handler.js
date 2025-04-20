@@ -1,5 +1,6 @@
-import { RESPONSE_CODE, sendPacket } from "../makePacket.js";
+import { sendPacket } from "../makePacket.js";
+import CONSTANTS from "../constants.js";
 
 export const errorHandler = (socket, message) => {
-  sendPacket(socket, RESPONSE_CODE.ERROR, { message });
+  sendPacket(socket, CONSTANTS.RESPONSE_CODE.ERROR, { message });
 };

@@ -1,11 +1,9 @@
-import { DatabaseSync } from "node:sqlite";
+import { db } from "../db.js";
 import { errorHandler } from "../handlers/error.handler.js";
 import User from "./user.class.js";
 
 export const users = new Map();
 export const blackList = new Set();
-
-const db = new DatabaseSync("../users.db");
 
 export const addUser = (socket, token) => {
   try {

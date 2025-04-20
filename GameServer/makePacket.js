@@ -1,8 +1,3 @@
-export const RESPONSE_CODE = {
-  EVENT_END,
-  ERROR,
-};
-
 export const makePacket = (responseCode, data) => {
   const responsePayload = {
     responseCode,
