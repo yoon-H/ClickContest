@@ -29,7 +29,7 @@ HTTP SERVER 명세
 |resonseCode|-|응답 종류 코드|
 |data|-|데이터(key:value 형식)|
 
-## 실격 처리
+# 실격 처리
 
 ### HTTP 서버
 
