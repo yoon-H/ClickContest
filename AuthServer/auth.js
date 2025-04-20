@@ -15,7 +15,7 @@ db.exec(`
     `);
 
 export const registerUser = async (body, res) => {
-  const result = registerUser(body);
+  const result = registerUserLogic(body);
   res.writeHead(result.code);
   res.end(result.message);
 };
